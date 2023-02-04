@@ -56,7 +56,7 @@ coffeeServiceUsecase := usecase.New(
     coupon.NewRandomCuppon(),
 )
 ```
-我们调用了位于usecase内部的两个实例化函数`repo.NewInMemoryRepo`以及`coupon.NewRandomCuppo`n来构建我们需要的依赖， 这里需要注意的是，`NewInMemoryRepo`以及`NewRandomCuppon`都不需要参数。 但是， 在真实场景下， 比如usecase可能会依赖数据库, 这里我们以postgresql为例， 代码会类似下面这样：
+我们调用了位于usecase内部的两个实例化函数`repo.NewInMemoryRepo`以及`coupon.NewRandomCuppon`来构建我们需要的依赖， 这里需要注意的是，`NewInMemoryRepo`以及`NewRandomCuppon`都不需要参数。 但是， 在真实场景下， 比如usecase可能会依赖数据库, 这里我们以postgresql为例， 代码会类似下面这样：
 
 ```golang
 pg := postgres.NewPg() // postgres会位于最外层的pkg目录下
