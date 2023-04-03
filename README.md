@@ -11,7 +11,7 @@ Bob大叔在在他的[blog](https://blog.cleancoder.com/uncle-bob/2012/08/13/the
   
 类似的架构方式还有"[六边形架构](https://alistair.cockburn.us/hexagonal-architecture/)"。
 
-## 实例应用简介
+## 示例应用简介
 正如上文提到的usecase(具体用例)是架构的中心， 所以在开始我们的实践之前， 我们需要想象一个业务， 一个简单的方便说明问题的业务 -- 我们将为一家名为GreatTime Coffee的线上咖啡商店开发一个App，这个App的最核心功能是用户展示GreatTime Coffee公司旗下的所有咖啡产品目录以及方便用户查询单一咖啡的价格信息。
 
 同时， 为了方便对比， 我们的代码会同时包含传统的实现方式以及整洁架构的实现方式。
@@ -65,7 +65,7 @@ coffeeServiceUsecase := usecase.New(
     repo.PgRepo(pg),
 )
 ```
-这里我们注入了一个数据库依赖， 哪一天我需要换一种数据库， 我完全可以在不影响业务代码的情况下轻松实现（前面的三明治模式就非常困难和麻烦）， 这或许就是整洁架构的意义。
+这里我们注入了一个数据库依赖， 哪一天我需要换一种数据库， 我完全可以在不影响业务代码的情况下轻松实现（前面的三明治模式就非常困难和麻烦）， 这或许就是整洁架构的意义（在测试场景下，有点尤为突出）。
 
 ## Reference
 [go-clean-template](https://github.com/evrone/go-clean-template)
